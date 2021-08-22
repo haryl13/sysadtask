@@ -34,19 +34,12 @@ do
 done
   
   v=$(awk 'Begin { ORS = " " }{print }' alphausers.txt)
-i=1
-for var in $v
-do 
-     
-    users[$i]="$var" 
-    i=`expr $i + 1`
-done
-    
+
    
    
 #adding users
 mkdir ./alphaQ
-for x in "${users[@]}"
+for x in "$v"
  do
       sudo useradd $x
       
